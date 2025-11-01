@@ -1,0 +1,120 @@
+.skills {
+  padding: 80px 20px;
+  background: #fafafa;
+}
+
+.skills .section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: #111;
+}
+
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 25px;
+}
+
+/* Card style */
+.skill-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 2px solid transparent;
+  overflow: hidden;
+  transition:
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.6s ease;
+  will-change: transform, box-shadow, border-color;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+  border-color: rgb(0, 0, 0); /* blue border highlight */
+}
+
+/* Header */
+.skill-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #111;
+}
+
+.skill-header .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+  will-change: transform;
+}
+
+.skill-card.active .skill-header .arrow {
+  transform: rotate(45deg);
+  color: #e30000;
+}
+
+/* Drop content - EXTREMELY SMOOTH */
+.skill-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.98);
+  transform-origin: top;
+  padding: 0 20px;
+  will-change: max-height, opacity, transform, padding;
+  transition:
+    max-height 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    padding 0.6s ease;
+}
+
+.skill-card.active .skill-content {
+  max-height: 600px;
+  opacity: 1;
+  transform: scaleY(1);
+  padding: 20px;
+}
+
+.skill-content p {
+  margin: 15px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Images inside card */
+.skill-images {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.skill-images img {
+  width: calc(50% - 7.5px);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.skill-card.active .skill-images img {
+  opacity: 1;
+  transform: translateY(0);
+}
