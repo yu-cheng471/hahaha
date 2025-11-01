@@ -1,0 +1,112 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Animation variables */
+:root {
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-duration: 1s;
+}
+
+/* Fade + Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reusable reveal class */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity var(--anim-duration) var(--ease-smooth), 
+              transform var(--anim-duration) var(--ease-smooth);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-image img {
+  width: 350px;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transition: transform 0.6s var(--ease-smooth), box-shadow 0.6s var(--ease-smooth);
+}
+
+.hero-image img:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+  max-width: 600px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 80%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
