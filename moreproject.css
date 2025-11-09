@@ -1,0 +1,67 @@
+/* ====== Container grid for more projects ====== */
+.simple-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px; /* space between projects */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ====== Each project block ====== */
+.simple-project {
+  padding: 20px 0;
+}
+
+/* ====== Uniform main image styling ====== */
+.simple-main-image img {
+  width: 100%;
+  height: 420px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.simple-main-image img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+/* ====== Description text ====== */
+.simple-project p {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ====== Divider between projects ====== */
+.project-divider {
+  border: none;
+  border-top: 1px solid #999;
+  margin: 40px 0;
+}
+
+/* ====== Responsive adjustments ====== */
+@media (max-width: 900px) {
+  .simple-main-image img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-main-image img {
+    height: 240px;
+  }
+}
+
+/* ===== Project 7 Sub 1 4:3 aspect ratio ===== */
+.sub1-4-3 {
+  width: 100%;              /* full width of its container */
+  aspect-ratio: 4 / 3;      /* keep 4:3 ratio */
+  object-fit: cover;         /* crop to fill without distortion */
+  border-radius: 12px;       /* optional, match main image styling */
+  display: block;
+}

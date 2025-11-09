@@ -1,0 +1,664 @@
+.project {
+  padding: 100px 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section title */
+.project .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+  width: 100%;
+}
+
+/* Container for all projects */
+.project-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Generic project card */
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  align-items: start;
+  margin: 0 auto 60px auto; /* reduced bottom margin */
+  padding: 0 20px;
+}
+
+/* Project 2 specific - wider image */
+.project-right {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+/* Text block */
+.project-text {
+  border-left: 4px solid #e30000;
+  padding-left: 25px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.project-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* CONSISTENT main image styling for ALL projects */
+.project-main-image {
+  width: 100%;
+}
+
+.project-main-image img {
+  width: 100%;
+  height: 420px; /* Fixed height */
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-main-image img:hover {
+  transform: translateY(-5px);
+}
+
+/* Bottom gallery */
+.project-sub-gallery {
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.project-sub-gallery img {
+  width: 100%;
+  max-height: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-sub-gallery img:hover {
+  transform: translateY(-5px);
+}
+
+/* Project 3 specific layout */
+.project-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  grid-template-columns: none;
+  grid-template-rows: none;
+}
+
+.project-3 .project-top {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.project-3 .project-main-image {
+  flex: 1.2;
+}
+
+.project-3 .project-text {
+  flex: 1;
+  border-left: 4px solid #e30000;
+  padding-left: 25px;
+}
+
+.project-3 .project-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.project-3 .project-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.project-3 .project-bottom {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+}
+
+.project-3 .project-bottom-left {
+  flex: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-3 .project-bottom-left img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-3 .project-bottom-left img:hover {
+  transform: translateY(-5px);
+}
+
+.project-3 .project-bottom-right {
+  flex: 70%;
+}
+
+.project-3 .project-bottom-right img {
+  width: 100%;
+  height: 415px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-3 .project-bottom-right img:hover {
+  transform: translateY(-5px);
+}
+
+/* Show more button */
+.show-more-container {
+  text-align: center;
+  margin-top: 20px; /* reduced */
+}
+
+.show-more-btn {
+  display: inline-block;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background: #ffffff;
+  color: #000;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 900px) {
+  .project {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 2rem !important;
+    margin-bottom: 40px !important;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 15px;
+    margin-bottom: 50px;
+  }
+
+  .project-card + .project-card {
+    padding-top: 5px;
+  }
+
+  .project-sub-gallery {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-text {
+    border: none;
+    border-top: 4px solid #e30000;
+    padding: 20px 0 0 0;
+    text-align: center;
+  }
+
+  .project-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-text p {
+    font-size: 1rem;
+  }
+
+  .project-main-image img {
+    height: 280px;
+  }
+
+  .project-sub-gallery img {
+    height: 220px;
+  }
+
+  .project-3 {
+    padding: 0 15px;
+  }
+
+  .project-3 .project-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-3 .project-text {
+    text-align: center;
+    border: none;
+    border-top: 4px solid #e30000;
+    padding: 20px 0 0 0;
+  }
+
+  .project-3 .project-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-3 .project-bottom-left,
+  .project-3 .project-bottom-right {
+    flex: 100%;
+  }
+
+  .project-3 .project-bottom-left img {
+    height: 200px;
+  }
+
+  .project-3 .project-bottom-right img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    padding: 40px 10px;
+  }
+
+  .project-card {
+    padding: 0 10px;
+    margin-bottom: 40px;
+  }
+
+  .project-3 {
+    padding: 0 10px;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  .project-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .project-main-image img {
+    height: 240px;
+  }
+}
+
+
+/* Add animation to main project images */
+.project-main-image img {
+    width: 100%;
+    height: 420px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;  /* ← Add this line */
+}
+
+.project-main-image img:hover {
+    transform: translateY(-5px);  /* ← Add this hover effect */
+}
+
+/* Add animation to Project 3 bottom images */
+.project-3 .project-bottom-left img {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    object-fit: cover;
+    transition: transform 0.3s ease;  /* ← Add this line */
+}
+
+.project-3 .project-bottom-left img:hover {
+    transform: translateY(-5px);  /* ← Add this hover effect */
+}
+
+.project-3 .project-bottom-right img {
+    width: 100%;
+    height: 415px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;  /* ← Add this line */
+}
+
+.project-3 .project-bottom-right img:hover {
+    transform: translateY(-5px);  /* ← Add this hover effect */
+}
+
+.show-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.show-more-btn {
+  display: inline-block;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  will-change: background, transform;
+}
+
+.show-more-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.certificates {
+  padding: 80px 20px;
+  background: #f5f5f7;
+}
+
+.certificates .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+/* Grid layout */
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.certificate-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Header button */
+.certificate-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.certificate-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.certificate-header .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Content (hidden by default) */
+.certificate-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
+  padding: 0 25px;
+}
+
+.certificate-content p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.certificate-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Active state */
+.certificate-card.active .certificate-content {
+  max-height: 800px;
+  opacity: 1;
+  padding: 20px 25px 25px;
+}
+
+.certificate-card.active .certificate-header .arrow {
+  transform: rotate(45deg);
+}
+
+
+
+
+/* ===== Certificates Section ===== */
+.certificates-section {
+  padding: 80px 20px;
+}
+
+.certificates-section .section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Container */
+.certificates-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 25px;
+}
+
+/* Card style with smooth lift + glow */
+.certificate-card {
+  background: #fff;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transform: translateY(0) scale(1);
+  transition: 
+    transform 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+    border 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, box-shadow, border;
+}
+
+/* Subtle glowing border */
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  transition: border-color 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.certificate-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.15);
+}
+
+.certificate-card:hover::before {
+  border-color: rgba(0, 0, 0, 0.6); /* Apple blue glow */
+}
+
+/* Header button */
+.certificate-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  color: #111;
+}
+
+.certificate-header .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+  will-change: transform;
+}
+
+.certificate-card.active .certificate-header .arrow {
+  transform: rotate(45deg);
+  color: #e30000;
+}
+
+/* Content (extremely smooth drop down) */
+.certificate-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.98);
+  transform-origin: top;
+  padding: 0 20px;
+  will-change: max-height, opacity, transform, padding;
+  transition:
+    max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    padding 0.6s ease;
+}
+
+.certificate-card.active .certificate-content {
+  max-height: 800px;
+  opacity: 1;
+  transform: scaleY(1);
+  padding: 20px;
+}
+
+.certificate-content p {
+  margin: 15px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Images inside card */
+.certificate-images {
+  display: flex;          /* existing: horizontal layout */
+  gap: 15px;              /* existing: space between images */
+  margin-top: 15px;       /* existing */
+  flex-wrap: nowrap;      /* UPDATED: prevent wrapping to keep horizontal arrangement */
+  justify-content: flex-start; /* NEW: aligns images to the left */
+  overflow-x: auto;       /* NEW: allow horizontal scroll if container is too narrow */
+}
+
+.certificate-images img {
+  width: auto;            /* UPDATED: let image keep natural aspect ratio */
+  max-width: 45%;         /* NEW: prevent images from being too big */
+  border-radius: 10px;    /* existing */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* existing */
+  object-fit: cover;      /* existing */
+  opacity: 0;             /* existing */
+  transform: translateY(10px); /* existing */
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* existing */
+}
+
+.certificate-card.active .certificate-images img {
+  opacity: 1;             /* existing */
+  transform: translateY(0); /* existing */
+}
+
+
+
+
+
+/* ===== Show More button ===== */
+.show-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.show-more-btn {
+  display: inline-block;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  will-change: background, transform, box-shadow;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.show-more-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.03);
+}
+
